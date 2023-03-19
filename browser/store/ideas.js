@@ -32,7 +32,7 @@ export const updateIdea = idea => {
 // Thunks
 
 export const createIdeaThunk = idea => dispatch => {
-  axios.post('http://18.217.225.84:8080/api/ideas', idea)
+  axios.post('http://18.222.117.114:8080/api/ideas', idea)
   .then(res => res.data)
   .then(createdIdea => {
     dispatch(createIdea(createdIdea));
@@ -41,7 +41,7 @@ export const createIdeaThunk = idea => dispatch => {
 }
 
 export const updateIdeaThunk = idea => dispatch => {
-  axios.put(`http://18.217.225.84:8080/api/ideas/${idea.id}`, idea)
+  axios.put(`http://18.222.117.114:8080/api/ideas/${idea.id}`, idea)
   .then(res => res.data)
   .then(updatedIdea => {
     dispatch(updateIdea(updatedIdea));

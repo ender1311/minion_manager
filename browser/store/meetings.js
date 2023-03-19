@@ -25,7 +25,7 @@ export const cancelMeetings = () => {
 }
 
 export const createMeetingThunk = () => dispatch => {
-  axios.post('http://18.217.225.84:8080/api/meetings')
+  axios.post('http://18.222.117.114:8080/api/meetings')
   .then(res => res.data)
   .then(createdMeeting => {
     dispatch(createMeeting(createdMeeting));
@@ -34,7 +34,7 @@ export const createMeetingThunk = () => dispatch => {
 }
 
 export const cancelMeetingsThunk = () => dispatch => {
-  axios.delete('http://18.217.225.84:8080/api/meetings')
+  axios.delete('http://18.222.117.114:8080/api/meetings')
   .then(() => {
     dispatch(cancelMeetings());
   })
