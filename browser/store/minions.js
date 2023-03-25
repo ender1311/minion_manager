@@ -33,7 +33,7 @@ export const updateMinion = minion => {
 // Thunks
 
 export const createMinionThunk = minion => dispatch => {
-  axios.post('http://3.133.140.120:8080/api/minions', minion)
+  axios.post('http://3.133.140.120:8000/api/minions', minion)
   .then(res => res.data)
   .then(createdMinion => {
     dispatch(addMinion(createdMinion));
@@ -43,7 +43,7 @@ export const createMinionThunk = minion => dispatch => {
 }
 
 export const updateMinionThunk = minion => dispatch => {
-  axios.put(`http://3.133.140.120:8080/api/minions/${minion.id}`, minion)
+  axios.put(`http://3.133.140.120:8000/api/minions/${minion.id}`, minion)
   .then(res => res.data)
   .then(updatedMinion => {
     dispatch(updateMinion(updatedMinion));
@@ -53,10 +53,10 @@ export const updateMinionThunk = minion => dispatch => {
 }
 
 export const deleteMinionThunk = minionId => dispatch => {
-  axios.delete(`http://3.133.140.120:8080/api/minions/${minionId}`)
+  axios.delete(`http://3.133.140.120:8000/api/minions/${minionId}`)
   .then(res => res.data)
   .then(() => {
-    return axios.get(`http://3.133.140.120:8080/api/minions`)
+    return axios.get(`http://3.133.140.120:8000/api/minions`)
   })
   .then(res => res.data)
   .then(allMinions => {

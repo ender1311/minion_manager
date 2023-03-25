@@ -38,7 +38,7 @@ export const deleteWork = workId => {
 // Thunks
 
 export const createWorkThunk = work => dispatch => {
-  axios.post(`http://3.133.140.120:8080/api/minions/${work.minionId}/work`, work)
+  axios.post(`http://3.133.140.120:8000/api/minions/${work.minionId}/work`, work)
   .then(res => res.data)
   .then(createdWork => {
     dispatch(addWork(createdWork));
@@ -47,7 +47,7 @@ export const createWorkThunk = work => dispatch => {
 }
 
 export const updateWorkThunk = work => dispatch => {
-  axios.put(`http://3.133.140.120:8080/api/minions/${work.minionId}/work/${work.id}`, work)
+  axios.put(`http://3.133.140.120:8000/api/minions/${work.minionId}/work/${work.id}`, work)
   .then(res => res.data)
   .then(updatedWork => {
     dispatch(updateWork(updatedWork));
@@ -56,7 +56,7 @@ export const updateWorkThunk = work => dispatch => {
 }
 
 export const deleteWorkThunk = work => dispatch => {
-  axios.delete(`http://3.133.140.120:8080/api/minions/${work.minionId}/work/${work.id}`)
+  axios.delete(`http://3.133.140.120:8000/api/minions/${work.minionId}/work/${work.id}`)
   .then(() => {
     dispatch(deleteWork(work.id));
   })
